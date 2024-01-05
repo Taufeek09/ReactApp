@@ -1,5 +1,5 @@
 import About from "./components/About.js";
-import Alert from "./components/Alart.js";
+import Alert from "./components/Alert.js";
 import Navbar from "./components/Navbar.js";
 import TextBox from "./components/TextBox.js";
 import "./App.css";
