@@ -34,7 +34,7 @@ export default function Textbox(props) {
     setText(newText);
     props.showAlert("Text Cleared .", "success");
   };
-  const handleonChange = () => {
+  const handleonChange = (event) => {
     setText(event.target.value);
   };
   const handleonCopy = () => {
