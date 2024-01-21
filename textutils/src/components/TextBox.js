@@ -38,7 +38,7 @@ export default function Textbox(props) {
     setText(event.target.value);
   };
   const handleonCopy = () => {
-    var text = document.getElementById("mybox");
+    let text = document.getElementById("mybox");
     navigator.clipboard.writeText(text.value);
     props.showAlert("Text Copied to clipboard.", "success");
   };
@@ -46,6 +46,13 @@ export default function Textbox(props) {
     let newText = text.split(/[ ]+/);
     setText(newText.join(" "));
     props.showAlert("Extra Spaces Removed.", "success");
+  };
+  const handleonPrint = () => {
+    // let text = document.getElementById("mybox");
+    // print(text.value);
+    let text =  document.getElementById("mybox");
+    window.print(text);
+    props.showAlert("Text Copied to clipboard.", "success");
   };
   const [text, setText] = useState("");
   return (
@@ -121,9 +128,16 @@ export default function Textbox(props) {
       >
         Remove Extra Space
       </button>
+      <button
+        disabled={text.length === 0}
+        className="btn btn-success mx-1 my-1"
+        onClick={handleonPrint}
+      >
+        Pring Text
+      </button>
       {/* <button className="btn btn-success mx-1 "
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            onClick={() =>  navigator.clipboard.writeText(text)}>Copy to clipboard 
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            </button> */}
+          onClick={() =>  navigator.clipboard.writeText(text)}>Copy to clipboard 
+       </button> */}
 
       <div
         className="container"
