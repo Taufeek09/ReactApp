@@ -47,13 +47,11 @@ export default function Textbox(props) {
     setText(newText.join(" "));
     props.showAlert("Extra Spaces Removed.", "success");
   };
-  const handleonPrint = () => {
-    // let text = document.getElementById("mybox");
-    // print(text.value);
-    let text =  document.getElementById("mybox");
-    window.print(text);
-    props.showAlert("Text Copied to clipboard.", "success");
-  };
+    const handleonPrint = () => {
+      const text = document.getElementById("mybox").value;
+      window.print(text);
+      props.showAlert("Text Print Successfull .", "success");
+    };
   const [text, setText] = useState("");
   return (
     <>
